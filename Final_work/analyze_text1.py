@@ -99,19 +99,20 @@ def print_most_common(hist, num=10):
 
 
 #NLTK
-def sentiment(comments):
+def sentiment(comments): #this part has problem that I am not sure why. different result from Test\score.py
     """
     run sentiment to get the scores. The compound score is the sum of positive, negative & neutral scores which is then normalized between -1(most extreme negative) and +1 (most extreme positive).
     """
     scores = []
     for comment in (comments):
         score = SentimentIntensityAnalyzer().polarity_scores(comment)
-        scores.append(score['compound'])
-        return score['compound'] #all the compound scores for each comments
+        scores.append(score['compound']) 
+        # return score['compound'] #all the compound scores for each comments
     avg = sum(scores)/len(scores) #this is average compound score of every strings from comments
     return avg
 
-
+# if avg > 0, positive
+#if avg < 0, negative
 
 def main():
     with open('data\comment_black_adam_review_text.pickle','rb') as input_file:
