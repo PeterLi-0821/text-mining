@@ -111,11 +111,13 @@ def sentiment(comments): #this part has problem that I am not sure why. differen
     avg = sum(scores)/len(scores) #this is average compound score of every strings from comments
     return avg
 
-# if avg > 0, positive
-#if avg < 0, negative
+# if avg > 0, positive comment
+#if avg < 0, negative comment
+
+
 
 def main():
-    with open('data\comment_black_adam_review_text.pickle','rb') as input_file:
+    with open('data\comment_us_stock_market_text.pickle','rb') as input_file:
         reloaded_copy_of_texts = pickle.load(input_file)
     hist = process_file(reloaded_copy_of_texts, skip_header=True)
 
