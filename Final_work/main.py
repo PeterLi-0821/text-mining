@@ -127,6 +127,10 @@ def sentiment(comments): #this part has problem that I am not sure why. differen
 
 
 def main():
+    """
+    
+
+    """
     with open('data\comment_us_stock_market_text.pickle','rb') as input_file:
         reloaded_copy_of_texts = pickle.load(input_file)
     hist = process_file(reloaded_copy_of_texts, skip_header=True)
