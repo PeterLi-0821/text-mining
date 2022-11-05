@@ -109,11 +109,21 @@ def sentiment(comments): #this part has problem that I am not sure why. differen
         scores.append(score['compound']) 
         # return score['compound'] #all the compound scores for each comments
     avg = sum(scores)/len(scores) #this is average compound score of every strings from comments
-    return avg
 
 # if avg > 0, positive comment
 #if avg < 0, negative comment
+    if avg > 0: 
+        if avg > 0.5:
+            print(f"the sentiment score is:{avg}, the comments are very positive!" )
+        else:
+            print(f"the sentiment score is:{avg}, the comments are slightly positive!")
 
+    elif avg < 0: 
+        if avg < -0.5:
+            print(f"the sentiment score is:{avg}, the comments are very negative!" )
+        else:
+            print(f"the sentiment score is:{avg}, the comments are slightly negative!")
+    
 
 
 def main():
@@ -131,6 +141,7 @@ def main():
     print_most_common(hist, 20)
 
     print(sentiment(reloaded_copy_of_texts))
+
 
 
 if __name__ == '__main__':

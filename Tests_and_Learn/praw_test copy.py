@@ -24,14 +24,11 @@ commonWords = {'that','this','THE','and','of','the','for','I','it','has','in',
 'all','when','had','see','his','him','who','by','her','she','our','thing','-',
 'now','what','going','been','we',"I'm",'than','any','because','We','even',
 'said','only','want','other','into','He','what','i','That','thought',
-'think',"that's",'Is','much'}
+'think',"that's",'Is','much', 'IN'}
 
 for submission in subreddit.top(limit=5):
     submission.comments.replace_more(limit=0)
     for top_level_comment in submission.comments:
-        # count += 1
-        # if(count == max):
-        #     break
         word = ""
         for letter in top_level_comment.body:
             if(letter == ' '):
@@ -42,8 +39,6 @@ for submission in subreddit.top(limit=5):
                 word = ""
             else:
                 word += letter
-    # if(count == max):
-    #         break
 
 for word in words:
     if word in wordCount:
@@ -65,26 +60,23 @@ def count_words(text):
             word_counts[word]= 1 
     return word_counts 
   
-    # >>>count_words(text) You can check the function 
-print(count_words(sortedList))
-# keyWords = []
-# keyCount = []
-# amount = 0
+# print(count_words(sortedList))
 
-# for entry in sortedList:
-#     keyWords.append(entry)
-#     keyCount.append(wordCount[entry])
-#     amount += 1
-#     if (amount == 10):
-#         break
+keyWords = []
+keyCount = []
+amount = 0
 
-# labels = keyWords
-# sizes = keyCount
-# # explode = (0, 0.1, 0, 0)  # only "explode" the 2nd slice (i.e. 'Hogs')
+for entry in sortedList:
+    keyWords.append(entry)
+    keyCount.append(wordCount[entry])
+    amount += 1
 
-# plt.title('Top comments for: r/' + 'wallstreetbets')
-# plt.pie(sizes, labels=labels, autopct='%1.1f%%',
-#         shadow=True, startangle=90)
-# plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+labels = keyWords
+sizes = keyCount
 
-# plt.show()
+plt.title('Top comments for: r/' + 'wallstreetbets')
+plt.pie(sizes, labels=labels, autopct='%1.1f%%',
+        shadow=True, startangle=90)
+plt.axis('equal')  
+
+plt.show()
