@@ -110,8 +110,10 @@ def sentiment(comments): #this part has problem that I am not sure why. differen
         # return score['compound'] #all the compound scores for each comments
     avg = sum(scores)/len(scores) #this is average compound score of every strings from comments
 
+# return a readable text for scores 
 # if avg > 0, positive comment
-#if avg < 0, negative comment
+# if avg < 0, negative comment
+
     if avg > 0: 
         if avg > 0.5:
             print(f"the sentiment score is:{avg}, the comments are very positive!" )
@@ -129,7 +131,6 @@ def sentiment(comments): #this part has problem that I am not sure why. differen
 def main():
     """
     
-
     """
     with open('data\comment_us_stock_market_text.pickle','rb') as input_file:
         reloaded_copy_of_texts = pickle.load(input_file)

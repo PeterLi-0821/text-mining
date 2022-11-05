@@ -10,7 +10,7 @@ The first python file is used for getting data from Reddit and converting the da
 
 ## 3. Results
 
-The main result is the positive or negative judgment concluded from comments read from Reddit. Using sentiment Vader I could get a score for all the comments. So I could tell people's opinions towards the movie *Black Adam* and *US Stock Market*, Which both have slightly positive comments. However, what I found that may harm the accuracy of nltk analysis is that there are special terms for the stock market and normal English may not fit in this situation. Also, Reddit comments are quite 
+The main result is the positive or negative judgment concluded from comments read from Reddit. Using sentiment Vader I could get a score for all the comments. So I could tell people's opinions towards the movie *Black Adam* and *US Stock Market*, Which both have slightly positive comments. However, what I found that may harm the accuracy of nltk analysis is that there are special terms for the stock market and normal English may not fit in this situation. The further study would be developing special codes only for the use of analyzing the stock market.
 
 Links: 
 - [Black Adam](https://www.reddit.com/r/entertainment/comments/y7jnts/black_adam_review_dwayne_johnsons_superhero_debut/)
